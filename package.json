@@ -1,0 +1,29 @@
+{
+  "name": "typescript-api",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "repository": "https://github.com/KKowalewski24/TypeScriptAPI.git",
+  "author": "Kamil Kowalewski",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "ts-node-dev --respawn src/index.ts",
+    "tsc": "tsc --watch"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.1.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.24"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.13.5",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
+  }
+}
