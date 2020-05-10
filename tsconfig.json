@@ -17,7 +17,7 @@
     // "sourceMap": true,
     // "outFile": "build/output",
     "outDir": "build",
-    "rootDir": "src",
+    // "rootDir": "src",
     // "composite": true,
     // "tsBuildInfoFile": "./",
     "removeComments": false,
