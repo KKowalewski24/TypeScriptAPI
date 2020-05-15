@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import Application from "./Application";
 import Constants from "./constant/Constants";
 import connection from "./connection/Connection";

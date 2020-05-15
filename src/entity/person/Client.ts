@@ -1,8 +1,8 @@
-import PrimaryEntity from "./base/PrimaryEntity";
+import Person from "./Person";
 import {Entity} from "typeorm";
 
 @Entity()
-export class Person extends PrimaryEntity {
+export class Client extends Person {
 
     /*------------------------ FIELDS REGION ------------------------*/
 
@@ -10,5 +10,4 @@ export class Person extends PrimaryEntity {
 
 }
 
-export default Person;
-    
+export default Client;
