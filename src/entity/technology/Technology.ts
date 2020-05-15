@@ -9,7 +9,7 @@ export class Technology extends PrimaryEntity {
     @Column()
     name: string;
 
-    @Column()
+    @Column({type: "enum", enum: [TechnologyType.BACK_END, TechnologyType.FRONT_END]})
     technologyType: TechnologyType;
 
     /*------------------------ METHODS REGION ------------------------*/
