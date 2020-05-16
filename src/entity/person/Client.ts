@@ -1,12 +1,20 @@
 import Person from "./Person";
-import {Entity} from "typeorm";
+import {Entity, ManyToOne} from "typeorm";
 import Developer from "./Developer";
 
 @Entity()
 export class Client extends Person {
 
     /*------------------------ FIELDS REGION ------------------------*/
-
+    //TODO
+    // @ManyToOne(
+    //         type => Developer,
+    //         developer => developer.clients,
+    //         {
+    //             onUpdate: "CASCADE",
+    //             onDelete: "CASCADE"
+    //         }
+    // )
     developer: Developer;
 
     /*------------------------ METHODS REGION ------------------------*/

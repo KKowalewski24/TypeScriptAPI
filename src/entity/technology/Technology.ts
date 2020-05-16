@@ -16,6 +16,7 @@ export class Technology extends PrimaryEntity {
     })
     technologyType: TechnologyType;
 
+    //TODO
     @OneToOne(
             type => Developer,
             developer => developer.technology,
