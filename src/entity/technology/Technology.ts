@@ -1,6 +1,7 @@
-import {Column, Entity} from "typeorm";
+import {Column, Entity, JoinColumn, OneToOne} from "typeorm";
 import PrimaryEntity from "../base/PrimaryEntity";
 import TechnologyType from "./TechnologyType";
+import Developer from "../person/Developer";
 
 @Entity()
 export class Technology extends PrimaryEntity {
@@ -9,8 +10,18 @@ export class Technology extends PrimaryEntity {
     @Column()
     name: string;
 
-    @Column({type: "enum", enum: [TechnologyType.BACK_END, TechnologyType.FRONT_END]})
+    @Column({
+        type: "enum",
+        enum: [TechnologyType.BACK_END, TechnologyType.FRONT_END]
+    })
     technologyType: TechnologyType;
+
+    @OneToOne(
+            type => Developer,
+            developer => developer.technology,
+            {cascade: true}
+    )
+    developer: Developer;
 
     /*------------------------ METHODS REGION ------------------------*/
     constructor(name: string, technologyType: TechnologyType) {
