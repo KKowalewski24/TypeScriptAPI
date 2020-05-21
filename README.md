@@ -1,6 +1,6 @@
 # TypeScriptAPI
 
-##### Basic Steps
+### Basic Steps
 ###### `reflect-metadata` - important package for decorators
 ```
 tsc --init
@@ -15,8 +15,8 @@ yarn add -D typescript ts-node-dev @types/node @types/express @types/body-parser
   }
 ```
 
-```
 ##### PostgreSQL config
+
 ```
 export const connection = createConnection({
     "type": "postgres",
