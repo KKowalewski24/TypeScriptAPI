@@ -10,6 +10,8 @@ export const connection = createConnection({
     "logging": false,
     "synchronize": true,
     "entities": [
-        "src/entity/**/*.ts"
+        "src/entity/**/*.ts",
+        // TODO FOR start:prod comment above line and uncomment below line
+        // "build/entity/**/*.js"
     ]
 });
