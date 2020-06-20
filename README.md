@@ -20,12 +20,12 @@
 ##### Scripts in package.json
 ```
   "scripts": {
-    "start": "ts-node-dev -r dotenv/config --respawn src",
+    "start": "ts-node-dev -r dotenv/config --respawn --transpileOnly src",
+    "start:prod": "tsc && node build/index.js",
     "tsc": "tsc",
     "tsc:watch": "tsc --watch"
   }
 ```
-
 ##### PostgreSQL config
 ```
 export const connection = createConnection({
