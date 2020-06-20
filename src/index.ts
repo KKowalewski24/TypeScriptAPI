@@ -2,7 +2,7 @@ import "reflect-metadata";
 import {connection} from "./connection/Connection";
 import DataLoader from "./loader/DataLoader";
 import {Application} from "./Application";
-import {Constants} from "./constant/Constants";
+import {PORT} from "./constant/Constants";
 
 connection.then(async (conn) => {
 
@@ -10,8 +10,6 @@ connection.then(async (conn) => {
     // await dataLoader.loadData();
     // await dataLoader.removeData();
 
-    new Application().app.listen(Constants.PORT, () => {
-        console.log("Server listening on http://localhost:3000")
-    });
+    new Application().listen(PORT);
 
 }).catch((error) => console.log(error));
