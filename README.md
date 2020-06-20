@@ -1,22 +1,28 @@
 # TypeScriptAPI
 
 ### Basic Steps
-###### `reflect-metadata` - important package for decorators
-```
-tsc --init
-yarn add reflect-metadata express body-parser cors typeorm pg 
-yarn add -D typescript ts-node-dev @types/node @types/express @types/body-parser @types/cors
-```
+* Run `yarn init ` then copy from Templates repo ./src, .gitignore
+* Run `tsc --init` then prepare config of tsconfig.json
+* Run `yarn add reflect-metadata dotenv` 
+* Run `yarn add -D typescript ts-node-dev @types/node @types/dotenv`
 
+### TypeORM
+* Run `yarn add typeorm ${chosen DB driver e.g. pg}`
+
+### Express.js and Routing-Controllers
+* Run `yarn add body-parser class-transformer class-validator cors express multer routing-controllers typedi`
+* Run `yarn add -D @types/body-parser @types/cors @types/express @types/multer`
+
+##### Scripts in package.json
 ```
-"scripts": {
-    "start": "ts-node-dev --respawn src/index.ts",
-    "tsc": "tsc --watch"
+  "scripts": {
+    "start": "ts-node-dev -r dotenv/config --respawn src",
+    "tsc": "tsc",
+    "tsc:watch": "tsc --watch"
   }
 ```
 
 ##### PostgreSQL config
-
 ```
 export const connection = createConnection({
     "type": "postgres",
