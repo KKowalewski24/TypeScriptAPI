@@ -7,6 +7,3 @@ export class Constants {
     private Constants() {
     }
 }
-
-export default Constants;
-    

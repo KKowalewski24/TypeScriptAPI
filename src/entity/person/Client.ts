@@ -1,6 +1,6 @@
-import Person from "./Person";
-import {Entity, ManyToOne} from "typeorm";
-import Developer from "./Developer";
+import {Entity} from "typeorm";
+import {Person} from "./Person";
+import {Developer} from "./Developer";
 
 @Entity()
 export class Client extends Person {
@@ -22,5 +22,3 @@ export class Client extends Person {
         super(firstName, lastName);
     }
 }
-
-export default Client;

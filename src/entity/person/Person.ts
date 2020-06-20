@@ -1,4 +1,4 @@
-import PrimaryEntity from "../base/PrimaryEntity";
+import {PrimaryEntity} from "../base/PrimaryEntity";
 import {Column} from "typeorm";
 
 export class Person extends PrimaryEntity {
@@ -17,6 +17,3 @@ export class Person extends PrimaryEntity {
         this.lastName = lastName;
     }
 }
-
-export default Person;
-    

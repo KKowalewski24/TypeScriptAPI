@@ -1,8 +1,8 @@
-import "reflect-metadata"
-import Application from "./Application";
-import Constants from "./constant/Constants";
-import connection from "./connection/Connection";
+import "reflect-metadata";
+import {connection} from "./connection/Connection";
 import DataLoader from "./loader/DataLoader";
+import {Application} from "./Application";
+import {Constants} from "./constant/Constants";
 
 connection.then(async (conn) => {
 

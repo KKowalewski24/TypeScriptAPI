@@ -20,6 +20,3 @@ export class Application {
         return this._app;
     }
 }
-
-export default Application;
-    

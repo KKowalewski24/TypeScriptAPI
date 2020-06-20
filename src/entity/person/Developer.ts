@@ -1,7 +1,7 @@
-import Person from "./Person";
-import {Entity, JoinColumn, OneToMany, OneToOne} from "typeorm";
-import Technology from "../technology/Technology";
-import Client from "./Client";
+import {Entity, JoinColumn, OneToOne} from "typeorm";
+import {Person} from "./Person";
+import {Technology} from "../technology/Technology";
+import {Client} from "./Client";
 
 @Entity()
 export class Developer extends Person {
@@ -35,5 +35,3 @@ export class Developer extends Person {
         super(firstName, lastName);
     }
 }
-
-export default Developer;

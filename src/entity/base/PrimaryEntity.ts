@@ -11,6 +11,3 @@ export class PrimaryEntity extends BaseEntity {
         super();
     }
 }
-
-export default PrimaryEntity;
-    

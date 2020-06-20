@@ -1,8 +1,8 @@
-import Technology from "../entity/technology/Technology";
-import TechnologyType from "../entity/technology/TechnologyType";
-import Developer from "../entity/person/Developer";
 import {Connection, Repository} from "typeorm";
-import Client from "../entity/person/Client";
+import {Developer} from "../entity/person/Developer";
+import {Technology} from "../entity/technology/Technology";
+import {Client} from "../entity/person/Client";
+import {TechnologyType} from "../entity/technology/TechnologyType";
 
 export class DataLoader {
 

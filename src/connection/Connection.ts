@@ -13,6 +13,3 @@ export const connection = createConnection({
         "src/entity/**/*.ts"
     ]
 });
-
-export default connection;
-    

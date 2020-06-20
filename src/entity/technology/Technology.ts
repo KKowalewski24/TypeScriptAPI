@@ -1,7 +1,7 @@
-import {Column, Entity, JoinColumn, OneToOne} from "typeorm";
-import PrimaryEntity from "../base/PrimaryEntity";
-import TechnologyType from "./TechnologyType";
-import Developer from "../person/Developer";
+import {Column, Entity, OneToOne} from "typeorm";
+import {PrimaryEntity} from "../base/PrimaryEntity";
+import {TechnologyType} from "./TechnologyType";
+import {Developer} from "../person/Developer";
 
 @Entity()
 export class Technology extends PrimaryEntity {
@@ -31,6 +31,3 @@ export class Technology extends PrimaryEntity {
         this.technologyType = technologyType;
     }
 }
-
-export default Technology;
-    
