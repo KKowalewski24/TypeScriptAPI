@@ -1,7 +1,7 @@
 # TypeScriptAPI
 
 ### Basic Steps
-* Run `yarn init ` then copy from Templates repo ./src, .gitignore
+* Run `yarn init ` then create .gitignore and src/index.ts 
 * Run `tsc --init` then prepare config of tsconfig.json
 * Run `yarn add reflect-metadata dotenv` 
 * Run `yarn add -D typescript ts-node-dev @types/node @types/dotenv`
