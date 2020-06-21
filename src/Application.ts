@@ -1,4 +1,4 @@
-import express from "express"
+import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import {createExpressServer, useContainer} from "routing-controllers";
@@ -7,26 +7,26 @@ import {Container} from "typedi";
 export class Application {
 
     /*------------------------ FIELDS REGION ------------------------*/
-    private readonly _application: express.Application;
+    private readonly _expressApplication: express.Application;
 
     /*------------------------ METHODS REGION ------------------------*/
     constructor() {
         useContainer(Container);
 
-        this._application = createExpressServer({
+        this._expressApplication = createExpressServer({
             //TODO
             controllers: []
         });
 
-        this._application.use(bodyParser.json());
-        this._application.use(cors);
+        this._expressApplication.use(bodyParser.json());
+        this._expressApplication.use(cors);
     }
 
-    get application(): express.Application {
-        return this._application;
+    get expressApplication(): express.Application {
+        return this._expressApplication;
     }
 
     public listen(port: number): void {
-        this._application.listen(port);
+        this._expressApplication.listen(port);
     }
 }
