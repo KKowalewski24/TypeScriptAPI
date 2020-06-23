@@ -1,15 +1,15 @@
 import {JsonController} from "routing-controllers";
 import {PATH_TECHNOLOGY} from "../constant/Constants";
-import {TechnologyService} from "../service/TechnologyService";
+import {TechnologyServiceImpl} from "../service/technology/TechnologyServiceImpl";
 
 @JsonController(PATH_TECHNOLOGY)
 export class TechnologyController {
 
     /*------------------------ FIELDS REGION ------------------------*/
-    private readonly _technologyService: TechnologyService;
+    private readonly _technologyService: TechnologyServiceImpl;
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor(technologyService: TechnologyService) {
+    public constructor(technologyService: TechnologyServiceImpl) {
         this._technologyService = technologyService;
     }
 }

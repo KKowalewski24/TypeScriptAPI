@@ -1,7 +1,8 @@
 import {Repository} from "typeorm";
-import {Technology} from "../entity/technology/Technology";
+import {Technology} from "../../entity/technology/Technology";
+import {TechnologyService} from "./TechnologyService";
 
-export class TechnologyService {
+export class TechnologyServiceImpl implements TechnologyService {
 
     /*------------------------ FIELDS REGION ------------------------*/
     private readonly _technologyRepository: Repository<Technology>;

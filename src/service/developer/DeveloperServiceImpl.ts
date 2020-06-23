@@ -1,7 +1,8 @@
 import {Repository} from "typeorm";
-import {Developer} from "../entity/person/Developer";
+import {Developer} from "../../entity/person/Developer";
+import {DeveloperService} from "./DeveloperService";
 
-export class DeveloperService {
+export class DeveloperServiceImpl implements DeveloperService {
 
     /*------------------------ FIELDS REGION ------------------------*/
     private readonly _developerRepository: Repository<Developer>;
