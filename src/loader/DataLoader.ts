@@ -15,6 +15,7 @@ export class DataLoader {
     /*------------------------ METHODS REGION ------------------------*/
     constructor(connection: Connection) {
         this._connection = connection;
+        //todo add service layer and change here
         this._developerRepository = this._connection.getRepository(Developer);
         this._technologyRepository = this._connection.getRepository(Technology);
         this._clientRepository = this._connection.getRepository(Client);
