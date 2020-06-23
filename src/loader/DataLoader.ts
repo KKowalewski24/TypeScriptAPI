@@ -39,5 +39,3 @@ export class DataLoader {
         await this._technologyRepository.clear();
     }
 }
-
-export default DataLoader;

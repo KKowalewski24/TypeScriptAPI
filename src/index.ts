@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import {connection} from "./connection/Connection";
-import DataLoader from "./loader/DataLoader";
+import {DataLoader} from "./loader/DataLoader";
 import {Application} from "./Application";
 import {PORT} from "./constant/Constants";
 
