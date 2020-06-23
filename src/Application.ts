@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import {createExpressServer, useContainer} from "routing-controllers";
 import {Container} from "typedi";
+import {PATH_DIR_CONTROLLER} from "./constant/Constants";
 
 export class Application {
 
@@ -10,19 +11,18 @@ export class Application {
     private readonly _expressApplication: express.Application;
 
     /*------------------------ METHODS REGION ------------------------*/
-    constructor() {
+    public constructor() {
         useContainer(Container);
 
         this._expressApplication = createExpressServer({
-            //TODO
-            controllers: []
+            controllers: [__dirname + PATH_DIR_CONTROLLER]
         });
 
         this._expressApplication.use(bodyParser.json());
         this._expressApplication.use(cors);
     }
 
-    get expressApplication(): express.Application {
+    public get expressApplication(): express.Application {
         return this._expressApplication;
     }
 
