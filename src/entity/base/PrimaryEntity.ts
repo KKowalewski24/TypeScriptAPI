@@ -7,8 +7,7 @@ export class PrimaryEntity extends BaseEntity {
     id: number;
 
     /*------------------------ METHODS REGION ------------------------*/
-
+    constructor() {
+        super();
+    }
 }
-
-export default PrimaryEntity;
-    
