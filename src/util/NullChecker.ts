@@ -1,7 +1,6 @@
 export class NullChecker<T> {
 
     /*------------------------ FIELDS REGION ------------------------*/
-    //todo check if works
 
     /*------------------------ METHODS REGION ------------------------*/
     public checkIfObjectIsUndefined(object: T | undefined, error: Error): T {
