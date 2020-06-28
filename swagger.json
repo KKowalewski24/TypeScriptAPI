@@ -1,0 +1,56 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "TODO API",
+    "contact": {
+      "name": "Kamil Kowalewski"
+    },
+    "description": "TODO",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "/api/v1/"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/weather-bit": {
+      "get": {
+        "tags": [
+          "Weather"
+        ],
+        "summary": "Get weather for chosen place from Weather Bit API",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "country",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "city",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Location not found."
+          }
+        }
+      }
+    }
+  }
+}

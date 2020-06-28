@@ -17,13 +17,30 @@
 * Run `yarn add body-parser class-transformer class-validator cors express multer routing-controllers typedi`
 * Run `yarn add -D @types/body-parser @types/cors @types/express @types/multer`
 
+* Swagger API Docs
+* Run `yarn add swagger-ui-express`
+* Add swagger.json with proper data - read swagger official docs
+* Add in tsconfig.json `"resolveJsonModule": true`
+* In main file import 
+```
+// @ts-ignore
+import swaggerUi from "swagger-ui-express";
+import * as swaggerDocument from "../swagger.json"
+```
+* Add swagger to express instance
+```
+app.use($SELECTED_PATH$, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+```
+
 ##### Scripts in package.json
 ```
   "scripts": {
     "start": "ts-node-dev -r dotenv/config --respawn --transpileOnly src",
     "start:prod": "tsc && node build/index.js",
     "tsc": "tsc",
-    "tsc:watch": "tsc --watch"
+    "tsc:watch": "tsc --watch",
+    "test": "jest",
+    "test:cov": "jest --coverage"
   }
 ```
 ##### PostgreSQL config

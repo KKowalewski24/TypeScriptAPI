@@ -50,6 +50,7 @@
     // "types": [],
     // "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     // "preserveSymlinks": true,
     // "allowUmdGlobalAccess": true,
 
