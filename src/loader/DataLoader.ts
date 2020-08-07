@@ -29,6 +29,8 @@ export class DataLoader {
     }
 
     public async loadData() {
+        //TODO
+
         // const clientOne: Client = new Client("Artur", "Kowalewski");
         // const clientTwo: Client = new Client("Krzysztof", "Kowalewski");
         // const technology: Technology = new Technology("NodeJs", TechnologyType.BACK_END);
