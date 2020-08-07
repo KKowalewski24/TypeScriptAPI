@@ -15,16 +15,15 @@ const printApiPaths = (): void => {
     console.log("PATH_TECHNOLOGY: " + PATH_TECHNOLOGY);
     console.log();
 };
-
 printApiPaths();
 
 export const application: Application = new Application();
 
-connection.then(async (conn) => {
+connection.then((conn) => {
 
     const dataLoader: DataLoader = new DataLoader(conn);
-    // await dataLoader.loadData();
-    // await dataLoader.removeData();
+    // dataLoader.loadData().catch(() => null);
+    // dataLoader.removeData().catch(() => null);
 
     application.listen(PORT);
 
