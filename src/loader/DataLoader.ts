@@ -15,7 +15,7 @@ export class DataLoader {
     private readonly _technologyService: TechnologyServiceImpl;
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor(connection: Connection) {
+    constructor(connection: Connection) {
         this._connection = connection;
 
         this._clientService = new ClientServiceImpl(
@@ -28,7 +28,7 @@ export class DataLoader {
                 this._connection.getRepository(Technology));
     }
 
-    public async loadData() {
+    async loadData() {
         //TODO
 
         // const clientOne: Client = new Client("Artur", "Kowalewski");
@@ -42,7 +42,7 @@ export class DataLoader {
         // await this._technologyService.save(technology);
     }
 
-    public async removeData() {
+    async removeData() {
         // await this._clientService.deleteAll();
         // await this._developerService.deleteAll();
         // await this._technologyService.deleteAll();

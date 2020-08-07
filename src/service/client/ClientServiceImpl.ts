@@ -11,7 +11,7 @@ export class ClientServiceImpl implements ClientService {
     private readonly _nullChecker: NullChecker<Client> = new NullChecker<Client>();
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor(clientRepository: Repository<Client>) {
+    constructor(clientRepository: Repository<Client>) {
         this._clientRepository = clientRepository;
     }
 }

@@ -11,7 +11,7 @@ export class TechnologyServiceImpl implements TechnologyService {
     private readonly _nullChecker: NullChecker<Technology> = new NullChecker<Technology>();
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor(technologyRepository: Repository<Technology>) {
+    constructor(technologyRepository: Repository<Technology>) {
         this._technologyRepository = technologyRepository;
     }
 }

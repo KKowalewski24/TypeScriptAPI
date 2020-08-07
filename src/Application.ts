@@ -14,7 +14,7 @@ export class Application {
     private readonly _expressApplication: express.Application;
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor() {
+    constructor() {
         useContainer(Container);
 
         this._expressApplication = createExpressServer({
@@ -27,11 +27,11 @@ export class Application {
         this._expressApplication.use(cors);
     }
 
-    public get expressApplication(): express.Application {
+    get expressApplication(): express.Application {
         return this._expressApplication;
     }
 
-    public listen(port: number): void {
+    listen(port: number): void {
         this._expressApplication.listen(port);
     }
 }

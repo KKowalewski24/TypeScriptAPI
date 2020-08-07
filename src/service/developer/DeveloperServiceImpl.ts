@@ -11,7 +11,7 @@ export class DeveloperServiceImpl implements DeveloperService {
     private readonly _nullChecker: NullChecker<Developer> = new NullChecker<Developer>();
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor(developerRepository: Repository<Developer>) {
+    constructor(developerRepository: Repository<Developer>) {
         this._developerRepository = developerRepository;
     }
 }
