@@ -1,5 +1,5 @@
 import {JsonController} from "routing-controllers";
-import {PATH_CLIENT} from "../constant/Constants";
+import {PATH_CLIENT} from "../constant/path-constants";
 import {ClientServiceImpl} from "../service/client/ClientServiceImpl";
 
 @JsonController(PATH_CLIENT)

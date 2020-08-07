@@ -1,5 +1,5 @@
 import {JsonController} from "routing-controllers";
-import {PATH_TECHNOLOGY} from "../constant/Constants";
+import {PATH_TECHNOLOGY} from "../constant/path-constants";
 import {TechnologyServiceImpl} from "../service/technology/TechnologyServiceImpl";
 
 @JsonController(PATH_TECHNOLOGY)

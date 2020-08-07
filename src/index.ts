@@ -4,7 +4,7 @@ import {DataLoader} from "./loader/DataLoader";
 import {Application} from "./Application";
 import {
     PATH_API_DOCS, PATH_API_PREFIX, PATH_CLIENT, PATH_DEVELOPER, PATH_TECHNOLOGY, PORT
-} from "./constant/Constants";
+} from "./constant/path-constants";
 
 const printApiPaths = (): void => {
     console.log();

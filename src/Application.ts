@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import {createExpressServer, useContainer} from "routing-controllers";
 import {Container} from "typedi";
-import {PATH_API_DOCS, PATH_API_PREFIX, PATH_DIR_CONTROLLER} from "./constant/Constants";
+import {PATH_API_DOCS, PATH_API_PREFIX, PATH_DIR_CONTROLLER} from "./constant/path-constants";
 // @ts-ignore
 import swaggerUi from "swagger-ui-express";
 import * as swaggerDocument from "../swagger.json"
