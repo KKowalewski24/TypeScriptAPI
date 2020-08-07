@@ -17,7 +17,7 @@
 * Run `yarn add body-parser class-transformer class-validator cors express multer routing-controllers typedi`
 * Run `yarn add -D @types/body-parser @types/cors @types/express @types/multer`
 
-* Swagger API Docs
+### Swagger API Docs
 * Run `yarn add swagger-ui-express`
 * Add swagger.json with proper data - read swagger official docs
 * Add in tsconfig.json `"resolveJsonModule": true`
