@@ -5,6 +5,7 @@ import {Client} from "../entity/person/Client";
 import {ClientServiceImpl} from "../service/client/ClientServiceImpl";
 import {DeveloperServiceImpl} from "../service/developer/DeveloperServiceImpl";
 import {TechnologyServiceImpl} from "../service/technology/TechnologyServiceImpl";
+import {TechnologyType} from "../entity/technology/TechnologyType";
 
 export class DataLoader {
 
@@ -29,17 +30,21 @@ export class DataLoader {
     }
 
     async loadData() {
-        //TODO
+        //TODO Change for services
 
-        // const clientOne: Client = new Client("Artur", "Kowalewski");
-        // const clientTwo: Client = new Client("Krzysztof", "Kowalewski");
-        // const technology: Technology = new Technology("NodeJs", TechnologyType.BACK_END);
-        // const developer: Developer = new Developer("Kamil", "Kowalewski");
-        //
-        // technology.developer = developer;
-        // developer.clients = [clientOne, clientTwo];
-        //
-        // await this._technologyService.save(technology);
+        const clientOne: Client = new Client("Artur", "Kowalewski");
+        const clientTwo: Client = new Client("Krzysztof", "Kowalewski");
+        const technology: Technology = new Technology("NodeJs", TechnologyType.BACK_END);
+        const developer: Developer = new Developer("Kamil", "Kowalewski");
+
+        technology.developer = developer;
+        developer.technology = technology;
+        developer.clients = [clientOne, clientTwo];
+
+        // await this._connection.getRepository(Technology).save(technology);
+        // await this._connection.getRepository(Client).save(cli);
+        // await this._connection.getRepository(Developer).save(developer);
+
     }
 
     async removeData() {
