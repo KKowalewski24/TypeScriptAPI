@@ -18,15 +18,6 @@ export class DataLoader {
     /*------------------------ METHODS REGION ------------------------*/
     constructor(connection: Connection) {
         this._connection = connection;
-
-        this._clientService = new ClientServiceImpl(
-                this._connection.getRepository(Client));
-
-        this._developerService = new DeveloperServiceImpl(
-                this._connection.getRepository(Developer));
-
-        this._technologyService = new TechnologyServiceImpl(
-                this._connection.getRepository(Technology));
     }
 
     async loadData() {
