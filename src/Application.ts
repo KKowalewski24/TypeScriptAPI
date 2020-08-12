@@ -18,13 +18,15 @@ export class Application {
         useContainer(Container);
 
         this._expressApplication = createExpressServer({
+            routePrefix: PATH_API_PREFIX,
             controllers: [__dirname + PATH_DIR_CONTROLLER]
         });
 
         this._expressApplication.use(PATH_API_PREFIX + PATH_API_DOCS,
                 swaggerUi.serve, swaggerUi.setup(swaggerDocument));
         this._expressApplication.use(bodyParser.json());
-        this._expressApplication.use(cors);
+        //TODO SET CORS
+        // this._expressApplication.use(cors);
     }
 
     get expressApplication(): express.Application {

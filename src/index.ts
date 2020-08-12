@@ -1,6 +1,5 @@
 import "reflect-metadata";
 import {connection} from "./connection/Connection";
-import {DataLoader} from "./loader/DataLoader";
 import {Application} from "./Application";
 import {
     PATH_API_DOCS, PATH_API_PREFIX, PATH_CLIENT, PATH_DEVELOPER, PATH_TECHNOLOGY, PORT
@@ -21,7 +20,7 @@ export const application: Application = new Application();
 
 connection.then((conn) => {
 
-    const dataLoader: DataLoader = new DataLoader(conn);
+    // const dataLoader: DataLoader = new DataLoader(conn);
     // dataLoader.loadData().catch(() => null);
     // dataLoader.removeData().catch(() => null);
 
