@@ -60,6 +60,12 @@ export const connection = createConnection({
 });
 ```
 
+###### Cascade Delete
+Unfortunately I was not able to figure out how to delete selected entities 
+or delete whole table content. 
+I tried setting `cascade: true`, `cascade: ["remove]` also `onDelete: "CASCADE"`. 
+Deleting manually by calling Repository API method also did not help. 
+
 #### Useful resources
 * [Routing-Controllers](https://github.com/typestack/routing-controllers)
 * [Medium](https://medium.com/@d_danailov/nodejs-microservice-importing-millions-records-on-amazon-s3-typescript-and-routing-controllers-3a296c622a3f)

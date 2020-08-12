@@ -39,12 +39,15 @@ export class DataLoader {
 
         technology.developer = developer;
         developer.technology = technology;
+
         developer.clients = [clientOne, clientTwo];
+        clientOne.developer = developer;
+        clientTwo.developer = developer;
 
-        // await this._connection.getRepository(Technology).save(technology);
-        // await this._connection.getRepository(Client).save(cli);
-        // await this._connection.getRepository(Developer).save(developer);
-
+        await this._connection.getRepository(Technology).save(technology);
+        await this._connection.getRepository(Developer).save(developer);
+        await this._connection.getRepository(Client).save(clientOne);
+        await this._connection.getRepository(Client).save(clientTwo);
     }
 
     async removeData() {
