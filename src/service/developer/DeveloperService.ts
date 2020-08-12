@@ -1,7 +1,6 @@
 import {BaseService} from "../BaseService";
 import {Developer} from "../../entity/person/Developer";
 
-export interface DeveloperService // TODO extends BaseService<Developer>
-{
+export interface DeveloperService extends BaseService<Developer> {
 
 }

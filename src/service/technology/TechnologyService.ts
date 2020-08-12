@@ -1,7 +1,6 @@
 import {BaseService} from "../BaseService";
 import {Technology} from "../../entity/technology/Technology";
 
-export interface TechnologyService // TODO extends BaseService<Technology>
-{
+export interface TechnologyService extends BaseService<Technology> {
 
 }
