@@ -15,6 +15,7 @@ export class Application {
 
     /*------------------------ METHODS REGION ------------------------*/
     constructor() {
+        //TypeDI was not used but config was left behind
         useContainer(Container);
 
         this._expressApplication = createExpressServer({

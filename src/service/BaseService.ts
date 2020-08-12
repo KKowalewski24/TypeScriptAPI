@@ -5,7 +5,7 @@ export interface BaseService<T> {
     //
     // findByObject(object: T): Promise<T>;
     //
-    // findAll(): Promise<T[]>;
+    findAll(): Promise<T[]>;
     //
     // update(object: T): Promise<T>;
     //
