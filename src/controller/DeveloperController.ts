@@ -9,7 +9,7 @@ export class DeveloperController {
     private readonly _developerService: DeveloperServiceImpl;
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor(developerService: DeveloperServiceImpl) {
+    constructor(developerService: DeveloperServiceImpl) {
         this._developerService = developerService;
     }
 }

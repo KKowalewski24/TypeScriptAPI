@@ -9,7 +9,7 @@ export class TechnologyController {
     private readonly _technologyService: TechnologyServiceImpl;
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor(technologyService: TechnologyServiceImpl) {
+    constructor(technologyService: TechnologyServiceImpl) {
         this._technologyService = technologyService;
     }
 }

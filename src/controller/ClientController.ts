@@ -9,7 +9,7 @@ export class ClientController {
     private readonly _clientService: ClientServiceImpl;
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor(clientService: ClientServiceImpl) {
+    constructor(clientService: ClientServiceImpl) {
         this._clientService = clientService;
     }
 }
