@@ -14,4 +14,8 @@ export class ClientServiceImpl implements ClientService {
     async findAll(): Promise<Client[]> {
         return await this._clientRepository.find();
     }
+
+    async findById(id: number): Promise<Client> {
+        return await this._clientRepository.findOneOrFail(id);
+    }
 }

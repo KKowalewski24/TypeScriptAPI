@@ -16,4 +16,7 @@ export class DeveloperServiceImpl implements DeveloperService {
         return await this._developerRepository.find();
     }
 
+    async findById(id: number): Promise<Developer> {
+        return await this._developerRepository.findOneOrFail(id);
+    }
 }

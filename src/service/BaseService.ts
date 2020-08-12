@@ -1,7 +1,7 @@
 export interface BaseService<T> {
 
     // TODO
-    // findById(id: number): Promise<T>;
+    findById(id: number): Promise<T>;
     //
     // findByObject(object: T): Promise<T>;
     //
