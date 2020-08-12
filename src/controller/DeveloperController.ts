@@ -1,5 +1,5 @@
 import {JsonController} from "routing-controllers";
-import {PATH_DEVELOPER} from "../constant/path-constants";
+import {PATH_DEVELOPERS} from "../constant/path-constants";
 import {DeveloperServiceImpl} from "../service/developer/DeveloperServiceImpl";
 import {Get} from "routing-controllers/index";
 
@@ -10,7 +10,7 @@ export class DeveloperController {
     private readonly _developerService: DeveloperServiceImpl = new DeveloperServiceImpl();
 
     /*------------------------ METHODS REGION ------------------------*/
-    @Get(PATH_DEVELOPER)
+    @Get(PATH_DEVELOPERS)
     getAll() {
         return this._developerService.findAll();
     }

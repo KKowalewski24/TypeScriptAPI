@@ -1,5 +1,5 @@
 import {JsonController} from "routing-controllers";
-import {PATH_TECHNOLOGY} from "../constant/path-constants";
+import {PATH_TECHNOLOGIES} from "../constant/path-constants";
 import {TechnologyServiceImpl} from "../service/technology/TechnologyServiceImpl";
 import {Get} from "routing-controllers/index";
 
@@ -10,7 +10,7 @@ export class TechnologyController {
     private readonly _technologyService: TechnologyServiceImpl = new TechnologyServiceImpl();
 
     /*------------------------ METHODS REGION ------------------------*/
-    @Get(PATH_TECHNOLOGY)
+    @Get(PATH_TECHNOLOGIES)
     getAll() {
         return this._technologyService.findAll();
     }
