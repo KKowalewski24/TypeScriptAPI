@@ -11,9 +11,9 @@ export class DataLoader {
 
     /*------------------------ FIELDS REGION ------------------------*/
     private readonly _connection: Connection;
-    private readonly _clientService: ClientServiceImpl;
-    private readonly _developerService: DeveloperServiceImpl;
-    private readonly _technologyService: TechnologyServiceImpl;
+    private readonly _clientService: ClientServiceImpl = new ClientServiceImpl();
+    private readonly _developerService: DeveloperServiceImpl = new DeveloperServiceImpl();
+    private readonly _technologyService: TechnologyServiceImpl = new TechnologyServiceImpl();
 
     /*------------------------ METHODS REGION ------------------------*/
     constructor(connection: Connection) {
@@ -21,8 +21,6 @@ export class DataLoader {
     }
 
     async loadData() {
-        //TODO Change for services
-
         const clientOne: Client = new Client("Artur", "Kowalewski");
         const clientTwo: Client = new Client("Krzysztof", "Kowalewski");
         const technology: Technology = new Technology("NodeJs", TechnologyType.BACK_END);
@@ -35,15 +33,13 @@ export class DataLoader {
         clientOne.developer = developer;
         clientTwo.developer = developer;
 
-        await this._connection.getRepository(Technology).save(technology);
-        await this._connection.getRepository(Developer).save(developer);
-        await this._connection.getRepository(Client).save(clientOne);
-        await this._connection.getRepository(Client).save(clientTwo);
+        await this._technologyService.save(technology);
+        await this._developerService.save(developer);
+        await this._clientService.save(clientOne);
+        await this._clientService.save(clientTwo);
     }
 
     async removeData() {
-        // await this._clientService.deleteAll();
-        // await this._developerService.deleteAll();
-        // await this._technologyService.deleteAll();
+
     }
 }

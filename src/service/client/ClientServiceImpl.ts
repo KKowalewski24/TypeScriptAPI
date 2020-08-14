@@ -18,4 +18,8 @@ export class ClientServiceImpl implements ClientService {
     async findById(id: number): Promise<Client> {
         return await this._clientRepository.findOneOrFail(id);
     }
+
+    async save(object: Client): Promise<Client> {
+        return await this._clientRepository.save(object);
+    }
 }

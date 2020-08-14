@@ -19,4 +19,8 @@ export class TechnologyServiceImpl implements TechnologyService {
     async findById(id: number): Promise<Technology> {
         return await this._technologyRepository.findOneOrFail(id);
     }
+
+    async save(object: Technology): Promise<Technology> {
+        return await this._technologyRepository.save(object);
+    }
 }

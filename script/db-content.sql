@@ -6,8 +6,8 @@ SELECT *
 FROM client;
 
 DELETE
-FROM technology;
+FROM client;
 DELETE
 FROM developer;
 DELETE
-FROM client;
+FROM technology;
