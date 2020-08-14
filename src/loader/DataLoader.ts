@@ -39,6 +39,10 @@ export class DataLoader {
         await this._clientService.save(clientTwo);
     }
 
+    async updateData() {
+
+    }
+
     async removeData() {
 
     }

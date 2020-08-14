@@ -22,6 +22,7 @@ connection.then((conn) => {
 
     // const dataLoader: DataLoader = new DataLoader(conn);
     // dataLoader.loadData().catch(() => null);
+    // dataLoader.updateData().catch(() => null);
     // dataLoader.removeData().catch(() => null);
 
     application.listen(PORT);
