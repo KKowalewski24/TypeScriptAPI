@@ -2,11 +2,11 @@
   "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
-    "title": "TODO API",
+    "title": "TypeScriptAPI",
     "contact": {
       "name": "Kamil Kowalewski"
     },
-    "description": "TODO",
+    "description": "Sample API created using TypeScript, TypeORM and Express.js",
     "license": {
       "name": "MIT",
       "url": "https://opensource.org/licenses/MIT"
@@ -24,21 +24,32 @@
     "application/json"
   ],
   "paths": {
-    "/weather-bit": {
+    "/clients/": {
       "get": {
         "tags": [
-          "Weather"
+          "Clients"
         ],
-        "summary": "Get weather for chosen place from Weather Bit API",
+        "summary": "Get clients",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Clients not found."
+          }
+        }
+      }
+    },
+    "/clients/{id}": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "summary": "Get client by id",
         "parameters": [
           {
-            "in": "query",
-            "name": "country",
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "city",
+            "in": "path",
+            "name": "id",
             "required": true
           }
         ],
@@ -47,7 +58,7 @@
             "description": "OK"
           },
           "404": {
-            "description": "Failed. Location not found."
+            "description": "Failed. Client not found."
           }
         }
       }
