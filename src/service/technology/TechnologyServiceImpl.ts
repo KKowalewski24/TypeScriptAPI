@@ -23,4 +23,8 @@ export class TechnologyServiceImpl implements TechnologyService {
     async save(object: Technology): Promise<Technology> {
         return await this._technologyRepository.save(object);
     }
+
+    async update(object: Technology): Promise<Technology> {
+        return await this._technologyRepository.save(object);
+    }
 }

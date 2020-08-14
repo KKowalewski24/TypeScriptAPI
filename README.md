@@ -60,11 +60,17 @@ export const connection = createConnection({
 });
 ```
 
-###### Cascade Delete
+##### Cascade Delete
 Unfortunately I was not able to figure out how to delete selected entities 
 or delete whole table content. 
 I tried setting `cascade: true`, `cascade: ["remove]` also `onDelete: "CASCADE"`. 
 Deleting manually by calling Repository API method also did not help. 
+
+##### TypeORM Update Entity
+The `save()` function saves all given entities in the database. If entities do not exist 
+in the database then inserts, otherwise updates. That is why in services save and update 
+methods call save method from the repository. In case of using DTO service should also require 
+id to convert to entity. If object does not contain PK then always saves not updates. 
 
 #### Useful resources
 * [Routing-Controllers](https://github.com/typestack/routing-controllers)

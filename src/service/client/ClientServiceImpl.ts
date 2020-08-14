@@ -22,4 +22,8 @@ export class ClientServiceImpl implements ClientService {
     async save(object: Client): Promise<Client> {
         return await this._clientRepository.save(object);
     }
+
+    async update(object: Client): Promise<Client> {
+        return await this._clientRepository.save(object);
+    }
 }

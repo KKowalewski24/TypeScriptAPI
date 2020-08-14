@@ -23,4 +23,8 @@ export class DeveloperServiceImpl implements DeveloperService {
     async save(object: Developer): Promise<Developer> {
         return await this._developerRepository.save(object);
     }
+
+    async update(object: Developer): Promise<Developer> {
+        return await this._developerRepository.save(object);
+    }
 }
