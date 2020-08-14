@@ -26,8 +26,7 @@ export class Application {
         this._expressApplication.use(PATH_API_PREFIX + PATH_API_DOCS,
                 swaggerUi.serve, swaggerUi.setup(swaggerDocument));
         this._expressApplication.use(bodyParser.json());
-        //TODO SET CORS
-        // this._expressApplication.use(cors);
+        this._expressApplication.use(cors);
     }
 
     get expressApplication(): express.Application {
