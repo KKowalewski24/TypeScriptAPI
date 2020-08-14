@@ -3,7 +3,7 @@ export class NullChecker<T> {
     /*------------------------ FIELDS REGION ------------------------*/
 
     /*------------------------ METHODS REGION ------------------------*/
-    public checkIfObjectIsUndefined(object: T | undefined, error: Error): T {
+    checkIfObjectIsUndefined(object: T | undefined, error: Error): T {
         if (!object) {
             throw error;
         } else {
@@ -11,7 +11,7 @@ export class NullChecker<T> {
         }
     }
 
-    public checkIfArrayIsUndefined(object: T[] | undefined, error: Error): T[] {
+    checkIfArrayIsUndefined(object: T[] | undefined, error: Error): T[] {
         if (!object) {
             throw error;
         } else {

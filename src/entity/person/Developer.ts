@@ -1,3 +1,4 @@
+import {OneToMany} from "typeorm/index";
 import {Entity, JoinColumn, OneToOne} from "typeorm";
 import {Person} from "./Person";
 import {Technology} from "../technology/Technology";
@@ -7,27 +8,17 @@ import {Client} from "./Client";
 export class Developer extends Person {
 
     /*------------------------ FIELDS REGION ------------------------*/
-    //TODO
     @OneToOne(
             type => Technology,
-            technology => technology.developer,
-            {
-                onUpdate: "CASCADE",
-                onDelete: "CASCADE"
-            }
+            technology => technology.developer
     )
     @JoinColumn()
     technology: Technology;
 
-    //TODO
-    // @OneToMany(
-    //         type => Client,
-    //         client => client.developer,
-    //         {
-    //             onUpdate: "CASCADE",
-    //             onDelete: "CASCADE"
-    //         }
-    // )
+    @OneToMany(
+            type => Client,
+            client => client.developer
+    )
     clients: Client[];
 
     /*------------------------ METHODS REGION ------------------------*/

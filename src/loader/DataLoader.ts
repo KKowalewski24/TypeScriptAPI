@@ -5,44 +5,45 @@ import {Client} from "../entity/person/Client";
 import {ClientServiceImpl} from "../service/client/ClientServiceImpl";
 import {DeveloperServiceImpl} from "../service/developer/DeveloperServiceImpl";
 import {TechnologyServiceImpl} from "../service/technology/TechnologyServiceImpl";
+import {TechnologyType} from "../entity/technology/TechnologyType";
 
 export class DataLoader {
 
     /*------------------------ FIELDS REGION ------------------------*/
     private readonly _connection: Connection;
-    private readonly _clientService: ClientServiceImpl;
-    private readonly _developerService: DeveloperServiceImpl;
-    private readonly _technologyService: TechnologyServiceImpl;
+    private readonly _clientService: ClientServiceImpl = new ClientServiceImpl();
+    private readonly _developerService: DeveloperServiceImpl = new DeveloperServiceImpl();
+    private readonly _technologyService: TechnologyServiceImpl = new TechnologyServiceImpl();
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor(connection: Connection) {
+    constructor(connection: Connection) {
         this._connection = connection;
-
-        this._clientService = new ClientServiceImpl(
-                this._connection.getRepository(Client));
-
-        this._developerService = new DeveloperServiceImpl(
-                this._connection.getRepository(Developer));
-
-        this._technologyService = new TechnologyServiceImpl(
-                this._connection.getRepository(Technology));
     }
 
-    public async loadData() {
-        // const clientOne: Client = new Client("Artur", "Kowalewski");
-        // const clientTwo: Client = new Client("Krzysztof", "Kowalewski");
-        // const technology: Technology = new Technology("NodeJs", TechnologyType.BACK_END);
-        // const developer: Developer = new Developer("Kamil", "Kowalewski");
-        //
-        // technology.developer = developer;
-        // developer.clients = [clientOne, clientTwo];
-        //
-        // await this._technologyService.save(technology);
+    async loadData() {
+        const clientOne: Client = new Client("Artur", "Kowalewski");
+        const clientTwo: Client = new Client("Krzysztof", "Kowalewski");
+        const technology: Technology = new Technology("NodeJs", TechnologyType.BACK_END);
+        const developer: Developer = new Developer("Kamil", "Kowalewski");
+
+        technology.developer = developer;
+        developer.technology = technology;
+
+        developer.clients = [clientOne, clientTwo];
+        clientOne.developer = developer;
+        clientTwo.developer = developer;
+
+        await this._technologyService.save(technology);
+        await this._developerService.save(developer);
+        await this._clientService.save(clientOne);
+        await this._clientService.save(clientTwo);
     }
 
-    public async removeData() {
-        // await this._clientService.deleteAll();
-        // await this._developerService.deleteAll();
-        // await this._technologyService.deleteAll();
+    async updateData() {
+
+    }
+
+    async removeData() {
+
     }
 }

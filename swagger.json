@@ -1,0 +1,67 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "TypeScriptAPI",
+    "contact": {
+      "name": "Kamil Kowalewski"
+    },
+    "description": "Sample API created using TypeScript, TypeORM and Express.js",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "/api/v1/"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/clients/": {
+      "get": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Get clients",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Clients not found."
+          }
+        }
+      }
+    },
+    "/clients/{id}": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "summary": "Get client by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Failed. Client not found."
+          }
+        }
+      }
+    }
+  }
+}

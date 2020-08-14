@@ -17,13 +17,30 @@
 * Run `yarn add body-parser class-transformer class-validator cors express multer routing-controllers typedi`
 * Run `yarn add -D @types/body-parser @types/cors @types/express @types/multer`
 
+### Swagger API Docs
+* Run `yarn add swagger-ui-express`
+* Add swagger.json with proper data - read swagger official docs
+* Add in tsconfig.json `"resolveJsonModule": true`
+* In main file import 
+```
+// @ts-ignore
+import swaggerUi from "swagger-ui-express";
+import * as swaggerDocument from "../swagger.json"
+```
+* Add swagger to express instance
+```
+app.use($SELECTED_PATH$, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+```
+
 ##### Scripts in package.json
 ```
   "scripts": {
     "start": "ts-node-dev -r dotenv/config --respawn --transpileOnly src",
     "start:prod": "tsc && node build/index.js",
     "tsc": "tsc",
-    "tsc:watch": "tsc --watch"
+    "tsc:watch": "tsc --watch",
+    "test": "jest",
+    "test:cov": "jest --coverage"
   }
 ```
 ##### PostgreSQL config
@@ -42,6 +59,18 @@ export const connection = createConnection({
     ]
 });
 ```
+
+##### Cascade Delete
+Unfortunately I was not able to figure out how to delete selected entities 
+or delete whole table content. 
+I tried setting `cascade: true`, `cascade: ["remove]` also `onDelete: "CASCADE"`. 
+Deleting manually by calling Repository API method also did not help. 
+
+##### TypeORM Update Entity
+The `save()` function saves all given entities in the database. If entities do not exist 
+in the database then inserts, otherwise updates. That is why in services save and update 
+methods call save method from the repository. In case of using DTO service should also require 
+id to convert to entity. If object does not contain PK then always saves not updates. 
 
 #### Useful resources
 * [Routing-Controllers](https://github.com/typestack/routing-controllers)

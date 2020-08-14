@@ -3,7 +3,10 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import {createExpressServer, useContainer} from "routing-controllers";
 import {Container} from "typedi";
-import {PATH_DIR_CONTROLLER} from "./constant/Constants";
+import {PATH_API_DOCS, PATH_API_PREFIX, PATH_DIR_CONTROLLER} from "./constant/path-constants";
+// @ts-ignore
+import swaggerUi from "swagger-ui-express";
+import * as swaggerDocument from "../swagger.json"
 
 export class Application {
 
@@ -11,22 +14,26 @@ export class Application {
     private readonly _expressApplication: express.Application;
 
     /*------------------------ METHODS REGION ------------------------*/
-    public constructor() {
+    constructor() {
+        //TypeDI was not used but config was left behind
         useContainer(Container);
 
         this._expressApplication = createExpressServer({
+            routePrefix: PATH_API_PREFIX,
             controllers: [__dirname + PATH_DIR_CONTROLLER]
         });
 
+        this._expressApplication.use(PATH_API_PREFIX + PATH_API_DOCS,
+                swaggerUi.serve, swaggerUi.setup(swaggerDocument));
         this._expressApplication.use(bodyParser.json());
         this._expressApplication.use(cors);
     }
 
-    public get expressApplication(): express.Application {
+    get expressApplication(): express.Application {
         return this._expressApplication;
     }
 
-    public listen(port: number): void {
+    listen(port: number): void {
         this._expressApplication.listen(port);
     }
 }

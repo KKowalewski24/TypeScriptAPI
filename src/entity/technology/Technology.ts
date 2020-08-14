@@ -12,15 +12,13 @@ export class Technology extends PrimaryEntity {
 
     @Column({
         type: "enum",
-        enum: [TechnologyType.BACK_END, TechnologyType.FRONT_END]
+        enum: TechnologyType
     })
     technologyType: TechnologyType;
 
-    //TODO
     @OneToOne(
             type => Developer,
-            developer => developer.technology,
-            {cascade: true}
+            developer => developer.technology
     )
     developer: Developer;
 
