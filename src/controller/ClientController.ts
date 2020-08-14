@@ -1,5 +1,5 @@
 import {JsonController} from "routing-controllers";
-import {Get, Param} from "routing-controllers/index";
+import {Body, Get, Param, Post, Put} from "routing-controllers/index";
 import {PATH_CLIENTS, PATH_CLIENTS_PARAM_ID} from "../constant/path-constants";
 import {ClientServiceImpl} from "../service/client/ClientServiceImpl";
 import {BaseController} from "./BaseController";
@@ -20,5 +20,15 @@ export class ClientController implements BaseController<Client> {
     @Get(PATH_CLIENTS_PARAM_ID)
     getById(@Param("id") id: number): Promise<Client> {
         return this._clientService.findById(id);
+    }
+
+    @Post(PATH_CLIENTS)
+    post(@Body() object: Client): Promise<Client> {
+        return this._clientService.save(object);
+    }
+
+    @Put(PATH_CLIENTS_PARAM_ID)
+    put(@Param("id") id: number, @Body() object: Client): Promise<Client> {
+        return this._clientService.update(object);
     }
 }
